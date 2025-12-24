@@ -1,7 +1,19 @@
 {
+  "name": "shoppy-ecommerce",
+  "version": "1.0.0",
+  "description": "Full-stack MERN e-commerce application",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
   "dependencies": {
     "dotenv": "^16.5.0",
     "mongodb": "^6.16.0",
     "mongoose": "^8.16.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
   }
 }

@@ -1,10 +1,9 @@
 const paypal = require("paypal-rest-sdk");
 
-// Course project dummy configuration
 paypal.configure({
-  mode: "sandbox", // Must be "sandbox" or "live" (can't be empty)
-  client_id: "sb-12345-dummy-course-project-client", 
-  client_secret: "dummy-course-project-secret-67890"
+  mode: process.env.PAYPAL_MODE || "sandbox",
+  client_id: process.env.PAYPAL_CLIENT_ID,
+  client_secret: process.env.PAYPAL_CLIENT_SECRET
 });
 
 module.exports = paypal;
